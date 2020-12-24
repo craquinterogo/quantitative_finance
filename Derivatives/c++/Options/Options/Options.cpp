@@ -1,4 +1,4 @@
-#include "European.h"
+#include "Options.h"
 #include <math.h>
 #include <boost/math/distributions/normal.hpp>
 #include <iostream>
@@ -6,15 +6,11 @@
 using boost::math::normal;
 using std::cout; using std::cin;  using std::endl;
 
-European::European(float S, float K, float rf, float sigma, float T, int psi) {
-	this->S = S;
-	this->K = K;
-	this->rf = rf;
-	this->sigma = sigma;
-	this->T = T;
+European::European(float S, float K, float rf, float sigma, float T, int psi) :
+	S(S), K(K), rf(rf), sigma(sigma), T(T), psi(psi)
+{
 	this->d1 = NULL;
 	this->d2 = NULL;
-	this->psi = psi;
 }
 
 void European::calculate_d1() {
