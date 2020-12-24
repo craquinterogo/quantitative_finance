@@ -6,28 +6,37 @@
 using boost::math::normal;
 using std::cout; using std::cin;  using std::endl;
 
-European::European(float S, float K, float rf, float sigma, float T, int psi) :
+Option::Option(float S, float K, float rf, float sigma, float T, int psi) :
 	S(S), K(K), rf(rf), sigma(sigma), T(T), psi(psi)
 {
-	this->d1 = NULL;
-	this->d2 = NULL;
+	cout << "Constructor" << endl;
 }
 
+European::European(float S, float K, float rf, float sigma, float T, int psi) : Option(S, K, rf, sigma, T, psi)
+{
+	d1 = NULL;
+	d2 = NULL;
+};
+
 void European::calculate_d1() {
-	d1 = (float) (log(S / K) + (rf + 0.5 * sigma * sigma) * T) / (sigma * sqrt(T));
-}
+	d1 = (float)(log(S / K) + (rf + 0.5 * sigma * sigma) * T) / (sigma * sqrt(T));
+};
 
 void European::calculate_d2() {
 	d2 = d1 - sigma * sqrt(T);
-}
+};
 
 double European::valuation() {
 	calculate_d1();
 	calculate_d2();
 	normal s;
-	double option_price = ((double) psi * S * cdf(s, psi * d1)) - ((double) psi * K * exp(-rf *T) * cdf(s, psi * d2));
+	double option_price = ((double)psi * S * cdf(s, psi * d1)) - ((double)psi * K * exp(-rf * T) * cdf(s, psi * d2));
 	return option_price;
-}
+};
+
+American::American(float S, float K, float rf, float sigma, float T, int psi) : Option(S, K, rf, sigma, T, psi)
+{
+};
 
 int main() {
 	double S, K, rf, T, sigma;
@@ -54,6 +63,6 @@ int main() {
 	cout << "======================" << endl;
 	cout << endl;
 
-	system("pause");
+	//system("pause");
 	return 0;
 }
