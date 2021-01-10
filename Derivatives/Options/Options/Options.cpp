@@ -2,9 +2,17 @@
 #include <math.h>
 #include <boost/math/distributions/normal.hpp>
 #include <iostream>
+#include <exception>
 
 using boost::math::normal;
 using std::cout; using std::cin;  using std::endl;
+
+struct OptionException : std::exception {
+	const char* what() const throw() {
+		return "Sorry!, you are throwing an error in Option class ... what will be it?. Take a view in Options.cpp";
+	}
+};
+
 
 Option::Option(float S, float K, float rf, float sigma, float T, int psi) :
 	S(S), K(K), rf(rf), sigma(sigma), T(T), psi(psi)
@@ -41,27 +49,31 @@ American::American(float S, float K, float rf, float sigma, float T, int psi) : 
 int main() {
 	double S, K, rf, T, sigma;
 	int psi;
+	try {
+		S = 10;
+		K = 11;
+		rf = 0.01;
+		sigma = 0.03;
+		T = 1;
+		psi = 1;
 
-	S = 10;
-	K = 11;
-	rf = 0.01;
-	sigma = 0.03;
-	T = 1;
-	psi = 1;
+		cout << "CALL OPTION" << endl;
+		cout << "---------------------" << endl;
+		European eur_option_call = European(S, K, rf, sigma, T, psi);
+		cout << "Option Value :: " << eur_option_call.valuation() << endl;
+		cout << "======================" << endl;
+		cout << endl;
 
-	cout << "CALL OPTION" << endl;
-	cout << "---------------------" << endl;
-	European eur_option_call = European(S, K, rf, sigma, T, psi);
-	cout << "Option Value :: " << eur_option_call.valuation()<<endl;
-	cout << "======================" << endl;
-	cout << endl;
-
-	cout << "PUT OPTION" << endl;
-	cout << "---------------------" << endl;
-	European eur_option_put = European(S, K, rf, sigma, T, -1*psi);
-	cout << "Option Value :: " << eur_option_put.valuation() << endl;
-	cout << "======================" << endl;
-	cout << endl;
+		cout << "PUT OPTION" << endl;
+		cout << "---------------------" << endl;
+		European eur_option_put = European(S, K, rf, sigma, T, -1 * psi);
+		cout << "Option Value :: " << eur_option_put.valuation() << endl;
+		cout << "======================" << endl;
+		cout << endl;
+	}
+	catch (OptionException& exe) {
+		cout << "ERROR : " << exe.what() << endl;
+	}
 
 	//system("pause");
 	return 0;
