@@ -12,6 +12,7 @@ This git repository has as target to expose some of the models used in quantitat
 
 ## Simulation
 - Monte Carlo Integration [here](https://github.com/craquinterogo/quantitative_finance/blob/master/Simulation/Monte_Carlo/Monte%20Carlo.ipynb)
+- Random Numbers Generation [here](https://github.com/craquinterogo/quantitative_finance/blob/master/Simulation/Monte_Carlo/ProbabilityDistRandomNumbersGenerator.ipynb)
 
 ## Portfolio Theory
 - Markowitz (unfinished) [here](https://github.com/craquinterogo/quantitative_finance/blob/master/PortfolioTheory/Markowitz.ipynb)
