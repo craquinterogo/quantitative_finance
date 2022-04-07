@@ -23,6 +23,10 @@ This git repository has as target to expose some of the models used in quantitat
 ## Stochastic Calculous
 - Geometric Brownian Motion (unfinished) [here](https://github.com/craquinterogo/quantitative_finance/blob/master/Stochastic/GBM.ipynb)
 
+## Technical Issues
+### Swig
+- How to use C and C++ code in Python [here](https://github.com/craquinterogo/quantitative_finance/blob/technical/swig/Technical_issues/Swig/Swig%20C%20and%20Python.ipynb)
+
 Any question or suggestion will be well recieved, at craquinterogo@unal.edu.co or cristian.quintero@est.uexternado.edu.co
 
 Enjoy it!
