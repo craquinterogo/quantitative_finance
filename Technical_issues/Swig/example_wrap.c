@@ -2853,11 +2853,19 @@ SWIG_AsVal_int (PyObject * obj, int *val)
 }
 
 
-SWIGINTERNINLINE PyObject*
-  SWIG_From_int  (int value)
+#if defined(LLONG_MAX) && !defined(SWIG_LONG_LONG_AVAILABLE)
+#  define SWIG_LONG_LONG_AVAILABLE
+#endif
+
+
+#ifdef SWIG_LONG_LONG_AVAILABLE
+SWIGINTERNINLINE PyObject* 
+SWIG_From_unsigned_SS_long_SS_long  (unsigned long long value)
 {
-  return PyInt_FromLong((long) value);
+  return (value > LONG_MAX) ?
+    PyLong_FromUnsignedLongLong(value) : PyInt_FromLong((long)(value));
 }
+#endif
 
 #ifdef __cplusplus
 extern "C" {
@@ -2868,7 +2876,7 @@ SWIGINTERN PyObject *_wrap_fact(PyObject *SWIGUNUSEDPARM(self), PyObject *args) 
   int val1 ;
   int ecode1 = 0 ;
   PyObject *swig_obj[1] ;
-  int result;
+  unsigned long long result;
   
   if (!args) SWIG_fail;
   swig_obj[0] = args;
@@ -2877,8 +2885,8 @@ SWIGINTERN PyObject *_wrap_fact(PyObject *SWIGUNUSEDPARM(self), PyObject *args) 
     SWIG_exception_fail(SWIG_ArgError(ecode1), "in method '" "fact" "', argument " "1"" of type '" "int""'");
   } 
   arg1 = (int)(val1);
-  result = (int)fact(arg1);
-  resultobj = SWIG_From_int((int)(result));
+  result = (unsigned long long)fact(arg1);
+  resultobj = SWIG_From_unsigned_SS_long_SS_long((unsigned long long)(result));
   return resultobj;
 fail:
   return NULL;

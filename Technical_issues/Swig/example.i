@@ -6,4 +6,4 @@
 #include "example.h"
 %}
 
-int fact(int n);
+unsigned long long int fact(int n);

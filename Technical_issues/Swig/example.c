@@ -2,13 +2,11 @@
 
 #include "example.h"
 
-int fact(int n){
-    if(n < 0){
-        return 0;
-    }
-    if (n == 0){
+unsigned long long int fact(int n) {
+    if (n == 0) {
         return 1;
-    }else{
-        return n * fact(n-1);
+    }else {
+        return n * fact(n - 1);
     }
+    return 0;
 }

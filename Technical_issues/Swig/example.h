@@ -1,3 +1,3 @@
 /* File: Example.h*/
 
-int fact(int n);
+unsigned long long int fact(int n);
