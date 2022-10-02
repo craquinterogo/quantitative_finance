@@ -21,7 +21,8 @@ This git repository has as target to expose some of the models used in quantitat
 - Nelson and Siegel Model, example [here](https://github.com/craquinterogo/quantitative_finance/blob/master/InterestRate/ZeroCoupon/Nelson_and_Siegel.ipynb)
 
 ## Stochastic Calculous
-- Geometric Brownian Motion (unfinished) [here](https://github.com/craquinterogo/quantitative_finance/blob/master/Stochastic/GBM.ipynb)
+- Random Walk [here](https://github.com/craquinterogo/quantitative_finance/blob/master/Stochastic/01_random_walk.ipynb)
+- Geometric Brownian Motion (unfinished) [here](https://github.com/craquinterogo/quantitative_finance/blob/master/Stochastic/03_GeometricBrownianMotion.ipynb)
 
 ## Technical Issues
 ### Swig
