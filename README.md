@@ -5,6 +5,7 @@ This git repository has as target to expose some of the models used in quantitat
 
 ## Derivatives
 - European Option Greeks (using Tensorflow) [here](https://github.com/craquinterogo/quantitative_finance/blob/master/Derivatives/European%20Option%20Greeks.ipynb)
+- European Option (using C++ implementation) [here](https://github.com/craquinterogo/quantitative_finance/blob/master/Derivatives/OptionsFromCpp.ipynb)
 
 ## Market Risk
 - VaR with Extreme Value Teory (EVT-VaR) [here](https://github.com/craquinterogo/quantitative_finance/blob/master/Risk/Market/VaR/EVT_ExtremeValueTheory.ipynb)
