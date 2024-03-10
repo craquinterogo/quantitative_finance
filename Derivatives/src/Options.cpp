@@ -1,27 +1,37 @@
-#include "Options.h"
+#include <iostream>
 #include <math.h>
 #include <boost/math/distributions/normal.hpp>
-#include <iostream>
+#include "Options.h"
+
+// int main(){
+// 	std::cout<<"Hello world!"<<std::endl;
+// 	std::cout<<quantero::summing_numbers(1.0,2.0)<<std::endl;
+// 	return 0;
+// }
+
+// float quantero::summing_numbers(float a, float b){
+// 	return a + b;
+// }
 
 using boost::math::normal;
 using std::cout; using std::cin;  using std::endl;
 
-European::European(float S, float K, float rf, float sigma, float T, int psi) :
+quantero::European::European(float S, float K, float rf, float sigma, float T, int psi) :
 	S(S), K(K), rf(rf), sigma(sigma), T(T), psi(psi)
 {
-	this->d1 = NULL;
-	this->d2 = NULL;
+	this->d1 = 0;
+	this->d2 = 0;
 }
 
-void European::calculate_d1() {
+void quantero::European::calculate_d1() {
 	d1 = (float) (log(S / K) + (rf + 0.5 * sigma * sigma) * T) / (sigma * sqrt(T));
 }
 
-void European::calculate_d2() {
+void quantero::European::calculate_d2() {
 	d2 = d1 - sigma * sqrt(T);
 }
 
-double European::valuation() {
+double quantero::European::valuation() {
 	calculate_d1();
 	calculate_d2();
 	normal s;
@@ -42,14 +52,14 @@ int main() {
 
 	cout << "CALL OPTION" << endl;
 	cout << "---------------------" << endl;
-	European eur_option_call = European(S, K, rf, sigma, T, psi);
+	quantero::European eur_option_call = quantero::European(S, K, rf, sigma, T, psi);
 	cout << "Option Value :: " << eur_option_call.valuation()<<endl;
 	cout << "======================" << endl;
 	cout << endl;
 
 	cout << "PUT OPTION" << endl;
 	cout << "---------------------" << endl;
-	European eur_option_put = European(S, K, rf, sigma, T, -1*psi);
+	quantero::European eur_option_put = quantero::European(S, K, rf, sigma, T, -1*psi);
 	cout << "Option Value :: " << eur_option_put.valuation() << endl;
 	cout << "======================" << endl;
 	cout << endl;
