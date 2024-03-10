@@ -13,5 +13,4 @@ namespace quantero{
 		European(float S, float K, float rf, float sigma, float T, int psi);
 		double valuation();
 	};
-	// float summing_numbers(float a, float b);
 }

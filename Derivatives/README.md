@@ -92,3 +92,58 @@ make
 ```
 
 Then it will create a file name **options**, which is the name we stablished in the CMakeFiles when calling the function *project*.
+
+# Swig
+
+## Creating interface
+
+It is necessary to creat the interface to let it read C++ classes from python.
+
+```swig
+/* File : Options.i */
+%module Options
+
+%{
+#include "Options.h"    
+%}
+
+%include "Options.h"
+```
+
+## Building the python interface
+
+```console
+swig -c++ -python Options.i
+```
+
+## Creating the setup file
+
+```python
+#!/usr/bin/env python
+
+"""
+setup.py file for SWIG example
+"""
+
+from distutils.core import setup, Extension
+
+example_module = Extension('_Options', sources=['Options_wrap.cxx','Options.cpp'])
+
+setup(
+    name = 'Options',
+    version = '0.1',
+    author = 'Cristian Quintero',
+    ext_modules=[example_module],
+    py_modules=['Options']
+)
+```
+
+After the previous step, we can build the extension using again a CMD or Terminal, depending what OS you are using, like this, taking into account this command line must generate a new file with **.pyd** extension who will be a dynamic library used to python portability programs:
+
+```bash
+python setup.py build_ext --inplace
+```
+
+# Portability
+
+The portability of the recent C++ class to be used from python codes resides in either the **.so** (linux) or **.dll** (windows) file generated, which are the **shared library** format of c++,once the *build_ext* command is executed. Thus, once generated you can use the class whenever you need just having the **shared library** in the same folder where you jupyter notebook is.
