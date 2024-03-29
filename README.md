@@ -24,6 +24,7 @@ This git repository has as target to expose some of the models used in quantitat
 ## Stochastic Calculous
 - Random Walk [here](https://github.com/craquinterogo/quantitative_finance/blob/master/Stochastic/01_random_walk.ipynb)
 - Geometric Brownian Motion (unfinished) [here](https://github.com/craquinterogo/quantitative_finance/blob/master/Stochastic/03_GeometricBrownianMotion.ipynb)
+- Brownian Bridge [here](https://github.com/craquinterogo/quantitative_finance/blob/master/Stochastic/04_BrownianBridge.ipynb)
 
 ## Technical Issues
 ### Swig
