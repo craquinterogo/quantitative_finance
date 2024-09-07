@@ -1,34 +1,52 @@
 # Quantitative Finance
 ## Cristian Quintero
 
-This git repository has as target to expose some of the models used in quantitative finance to portfolio investment and financial risk, mainly. Some topics are:
+This git repository is th result of storing some of the models used in quantitative finance to portfolio investment and financial risk, mainly. Mainly as result of lessons learned in academy and professional work.
 
-## Derivatives
+---
+## Lecture Notes
+### A bit of Maths
+- Laplace Transformation [here](https://github.com/craquinterogo/quantitative_finance/blob/master/LectureNotes/ABitOfMathematics/00_03_LaplaceTransformation.pdf)
+
+### Interest Rates
+- Bonds [here](https://github.com/craquinterogo/quantitative_finance/blob/master/LectureNotes/Interest%20Rates/01_01_Bonds.pdf)
+
+### Options
+- Black-Scholes equation [here](https://github.com/craquinterogo/quantitative_finance/blob/master/LectureNotes/Options/03_04_Black_scholes_equation.pdf)
+
+### Stochastic Process
+- Geometric Brownian Motion (GBM) [here](https://github.com/craquinterogo/quantitative_finance/blob/master/LectureNotes/StochasticProcess/02_01_GeometricBrownianMotion.pdf)
+
+---
+
+## Codes
+### Derivatives
 - European Option Greeks (using Tensorflow) [here](https://github.com/craquinterogo/quantitative_finance/blob/master/Derivatives/European%20Option%20Greeks.ipynb)
 - European Option (using C++ implementation) [here](https://github.com/craquinterogo/quantitative_finance/blob/master/Derivatives/OptionsFromCpp.ipynb)
 
-## Market Risk
+### Market Risk
 - VaR with Extreme Value Teory (EVT-VaR) [here](https://github.com/craquinterogo/quantitative_finance/blob/master/Risk/Market/VaR/EVT_ExtremeValueTheory.ipynb)
 - Cornish Fisher VaR (mVaR) [here](https://github.com/craquinterogo/quantitative_finance/blob/master/Risk/Market/VaR/Modified_CornishFisher.ipynb)
 
-## Simulation
+### Simulation
 - Monte Carlo Integration [here](https://github.com/craquinterogo/quantitative_finance/blob/master/Simulation/Monte_Carlo/Monte%20Carlo.ipynb)
 - Random Numbers Generation [here](https://github.com/craquinterogo/quantitative_finance/blob/master/Simulation/Monte_Carlo/ProbabilityDistRandomNumbersGenerator.ipynb)
 
-## Portfolio Theory
+### Portfolio Theory
 - Markowitz (unfinished) [here](https://github.com/craquinterogo/quantitative_finance/blob/master/PortfolioTheory/Markowitz.ipynb)
 
-## Other models
+### Other models
 - Nelson and Siegel Model, example [here](https://github.com/craquinterogo/quantitative_finance/blob/master/InterestRate/ZeroCoupon/Nelson_and_Siegel.ipynb)
 
-## Stochastic Calculous
+### Stochastic Calculous
+- Quadratic Variation on Brownian Motion[here](https://github.com/craquinterogo/quantitative_finance/blob/master/Stochastic/01_fundamentals/01_quadratic_variation_BM.ipynb)
 - Random Walk [here](https://github.com/craquinterogo/quantitative_finance/blob/master/Stochastic/01_random_walk.ipynb)
 - Geometric Brownian Motion (unfinished) [here](https://github.com/craquinterogo/quantitative_finance/blob/master/Stochastic/03_GeometricBrownianMotion.ipynb)
 - Brownian Bridge [here](https://github.com/craquinterogo/quantitative_finance/blob/master/Stochastic/04_BrownianBridge.ipynb)
 
-## Technical Issues
-### Swig
-- How to use C and C++ code in Python [here](https://github.com/craquinterogo/quantitative_finance/blob/master/Technical_issues/Swig/Swig%20C%20and%20Python.ipynb)
+### Technical Issues / Challenges
+- How to use C and C++ code in Python by using Swig [here](https://github.com/craquinterogo/quantitative_finance/blob/master/Technical_issues/Swig/Swig%20C%20and%20Python.ipynb)
+- Counter argument on forecasting misconception when Kernel regression is used without clear distinction between In-Sample data for training and Out-of-sample data for testing. [here](https://github.com/craquinterogo/quantitative_finance/blob/master/Technical_issues/ForecastingMisconceptions/AbdelkarimCase.ipynb)
 
 Any question or suggestion will be well recieved, at craquinterogo@unal.edu.co or cristian.quintero@est.uexternado.edu.co
 
