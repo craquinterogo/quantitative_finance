@@ -1,7 +1,6 @@
-# Quantitative Finance
-## Cristian Quintero
+# Notes on Quantitative Finance and Machine Learning by Cristian Quintero
 
-This git repository is th result of storing some of the models used in quantitative finance to portfolio investment and financial risk, mainly. Mainly as result of lessons learned in academy and professional work.
+This git repository is the result of storing some of the personal notes about models used in quantitative finance and from time to time deep learning and reinforcement learning. All those are result of lessons learned in academy and professional work.
 
 ---
 ## Lecture Notes
@@ -41,7 +40,7 @@ This git repository is th result of storing some of the models used in quantitat
 ### Stochastic Calculous
 - Quadratic Variation on Brownian Motion[here](https://github.com/craquinterogo/quantitative_finance/blob/master/Stochastic/01_fundamentals/01_quadratic_variation_BM.ipynb)
 - Random Walk [here](https://github.com/craquinterogo/quantitative_finance/blob/master/Stochastic/01_random_walk.ipynb)
-- Geometric Brownian Motion (unfinished) [here](https://github.com/craquinterogo/quantitative_finance/blob/master/Stochastic/03_GeometricBrownianMotion.ipynb)
+- Geometric Brownian Motion [here](https://github.com/craquinterogo/quantitative_finance/blob/master/Stochastic/03_GeometricBrownianMotion.ipynb)
 - Brownian Bridge [here](https://github.com/craquinterogo/quantitative_finance/blob/master/Stochastic/04_BrownianBridge.ipynb)
 
 ### Technical Issues / Challenges
