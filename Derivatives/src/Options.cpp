@@ -1,10 +1,13 @@
 #include <iostream>
 #include <math.h>
-#include <boost/math/distributions/normal.hpp>
+#include <cmath>
 #include "Options.h"
 
-using boost::math::normal;
 using std::cout; using std::cin;  using std::endl;
+
+double quantero::N(const double x, double mu, double sigma){
+	return 0.5*(1+std::erf((x-mu)/(sigma*std::sqrt(2))));
+}
 
 quantero::European::European(float S, float K, float rf, float sigma, float T, int psi) :
 	S(S), K(K), rf(rf), sigma(sigma), T(T), psi(psi)
@@ -24,7 +27,7 @@ void quantero::European::calculate_d2() {
 double quantero::European::valuation() {
 	calculate_d1();
 	calculate_d2();
-	normal s;
-	double option_price = ((double) psi * S * cdf(s, psi * d1)) - ((double) psi * K * exp(-rf *T) * cdf(s, psi * d2));
+	auto cdf = [](double dx){return N(dx,0,1);};
+	double option_price = ((double) psi * S * cdf(psi * d1)) - ((double) psi * K * exp(-rf *T) * cdf(psi * d2));
 	return option_price;
 }

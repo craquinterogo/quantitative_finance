@@ -1,6 +1,8 @@
 #pragma once
 
 namespace quantero{
+	double N(const double x, double mu, double sigma);
+
 	class European
 	{
 	private:

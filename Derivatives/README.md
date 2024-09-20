@@ -147,3 +147,11 @@ python setup.py build_ext --inplace
 # Portability
 
 The portability of the recent C++ class to be used from python codes resides in either the **.so** (linux) or **.dll** (windows) file generated, which are the **shared library** format of c++,once the *build_ext* command is executed. Thus, once generated you can use the class whenever you need just having the **shared library** in the same folder where you jupyter notebook is.
+
+# Technical Notes
+
+## Normal Cumulative Distribution Function
+For calculating the call/put premium it is required the normal cumulative distribution function (CDF). However the previous implementation contained the boost implementation. Now, the normal CDF is built by using the Error Function (erf), thus
+
+
+$$F_x(x) = \frac{1}{2}\left(1+erf\left(\frac{x-\mu}{\sigma \sqrt{2}}\right)\right)$$
