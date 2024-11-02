@@ -11,6 +11,7 @@ This git repository is the result of storing some of the personal notes about mo
 - Bonds [here](https://github.com/craquinterogo/quantitative_finance/blob/master/LectureNotes/Interest%20Rates/01_01_Bonds.pdf)
 
 ### Options
+- Binomial Tree Model [here](https://github.com/craquinterogo/quantitative_finance/blob/master/LectureNotes/Options/02_03_BinomialTree.pdf)
 - Black-Scholes equation [here](https://github.com/craquinterogo/quantitative_finance/blob/master/LectureNotes/Options/03_04_Black_scholes_equation.pdf)
 
 ### Stochastic Process
