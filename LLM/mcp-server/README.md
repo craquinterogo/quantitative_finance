@@ -60,9 +60,7 @@ A `mcp.json` file requires to be created to work as workspace server, with the c
 
 Promt for testing quant-mcp-server is 
 
-```
-identify the absolute path of CSV in this workspace and then use quant-mcp-server to retrieve the last 253 days of column "close", then used to calculate the returns and subsequently letting to calculate VaR and CVaR. Take into account the expected input format. No any additional script is required. Be flexible with the number of decimals such that you don't modify outputs. Not apply any rouding or truncate.
-```
+> Identify the absolute path of the CSV in this workspace and then use quant-mcp-server to retrieve the last 253 days of the "close" column. Use these values to calculate the returns, and subsequently calculate VaR and CVaR. Take into account the expected input format. No additional script is required. Be flexible with the number of decimals so that you don't modify outputs. Do not apply any rounding or truncation.
 
 More details in 
 
