@@ -44,7 +44,7 @@ python server.py
 
 ## Configuration
 
-A `mcp.json` file requires to be created to work as workspace server, with the content as shown below. More details about connection from Github Copilot in Agent mode [here](https://code.visualstudio.com/docs/copilot/chat/mcp-servers){:target="_blank" rel="noopener"}.
+A `mcp.json` file requires to be created to work as workspace server, with the content as shown below. More details about connection from Github Copilot in Agent mode [here](https://code.visualstudio.com/docs/copilot/chat/mcp-servers).
 
 ```json
 {
