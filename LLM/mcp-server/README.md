@@ -48,14 +48,12 @@ A `mcp.json` file requires to be created to work as workspace server, with the c
 
 ```json
 {
-  "servers": {
-    "quant-finance-mcp": {
-      "type": "stdio",
-      "command": "python",
-      "args": ["server.py"],
-      "cwd": "/home/donnetoo/GIT/quantitative_finance/LLM/mcp-server"
+    "servers": {
+        "quant-mcp-server": {
+            "type": "sse",
+            "url": "http://127.0.0.1:8000/sse"
+        }
     }
-  }
 }
 ```
 # Testing MCP server with Github copilot
