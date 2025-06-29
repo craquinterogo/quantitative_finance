@@ -39,10 +39,13 @@ This git repository is the result of storing some of the personal notes about mo
 - Nelson and Siegel Model, example [here](https://github.com/craquinterogo/quantitative_finance/blob/master/InterestRate/ZeroCoupon/Nelson_and_Siegel.ipynb)
 
 ### Stochastic Calculous
-- Quadratic Variation on Brownian Motion[here](https://github.com/craquinterogo/quantitative_finance/blob/master/Stochastic/01_fundamentals/01_quadratic_variation_BM.ipynb)
+- Quadratic Variation on Brownian Motion [here](https://github.com/craquinterogo/quantitative_finance/blob/master/Stochastic/01_fundamentals/01_quadratic_variation_BM.ipynb)
 - Random Walk [here](https://github.com/craquinterogo/quantitative_finance/blob/master/Stochastic/01_random_walk.ipynb)
 - Geometric Brownian Motion [here](https://github.com/craquinterogo/quantitative_finance/blob/master/Stochastic/03_GeometricBrownianMotion.ipynb)
 - Brownian Bridge [here](https://github.com/craquinterogo/quantitative_finance/blob/master/Stochastic/04_BrownianBridge.ipynb)
+
+### LLM
+- MCP server calculating HVaR (testing) [here](https://github.com/craquinterogo/quantitative_finance/tree/mcp-server-test/LLM/mcp-server)
 
 ### Technical Issues / Challenges
 - How to use C and C++ code in Python by using Swig [here](https://github.com/craquinterogo/quantitative_finance/blob/master/Technical_issues/Swig/Swig%20C%20and%20Python.ipynb)
