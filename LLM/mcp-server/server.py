@@ -9,6 +9,7 @@ from my_var.utils import extract_column_from_csv
 
 import warnings
 import pandas as pd
+from datetime import datetime
 warnings.filterwarnings('ignore')
 
 # Create an MCP server
@@ -31,7 +32,7 @@ def extract_column_from_csv_mcp(csv_path: str, column: str, days: int, round:int
     {
         "csv_path": "/path/to/prices.csv",
         "column": "Close",
-        "days": 30,
+        "days": 252,
         "round": 4
     }
 
@@ -83,9 +84,8 @@ def calculate_var_cvar_historical_mcp(returns:list[float], significance_level:fl
     """
     return calculate_var_cvar_historical(returns=returns, significance_level=significance_level)
 
-
-@mcp.resource("yfinance-data://{ticker}/{period}")
-def download_yfinance_data(ticker: str, period: str = '2y') -> dict:
+@mcp.resource("yfinance-data://{ticker}/{period}/{save_file}/{column_name}")
+def download_yfinance_data(ticker: str, period: str = '2y', column_name: str="Close", save_file:bool = False) -> dict:
     """
     Download historical data from Yahoo Finance for a given ticker and period.
 
@@ -96,14 +96,28 @@ def download_yfinance_data(ticker: str, period: str = '2y') -> dict:
     Returns:
     dict: Historical price data as a dictionary
     """
-    stock = yf.Ticker(ticker)
-    data = stock.history(period=period)
-    if data.empty:
-        raise ValueError(f"No data found for ticker {ticker} and period {period}")
-    return data.reset_index().to_dict(orient='list')
+    try:
+        print(f"Parameters: ticker={ticker}, period={period}, column_name={column_name}, save_file={save_file}")
+        stock = yf.Ticker(ticker)
+        data = stock.history(period=period)
+        # print('Downloading ... ',data.shape,' |')
+        if data.empty:
+            raise ValueError(f"No data found for ticker {ticker} and period {period}")
+        
+        if save_file:
+            date_str = datetime.now().strftime("%Y%m%d_%H%M%S")
+            file_name = f'datasource/{ticker}_{date_str}.csv'
+            data.to_csv(file_name)
+            return {"file_name": file_name}
+        else:
+            return data.reset_index().to_dict(orient='list')[column_name]
+    except Exception as ex:
+        print(f'There is an error-------------------, \n{ex}')
 
 def main():
     """Main function to run the MCP server"""
+    mcp.settings.sse_path = '/mcp-market-risk'
+    mcp.settings.port = 8000
     mcp.run(transport='sse')
 
 if __name__ == "__main__":
